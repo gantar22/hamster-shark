@@ -11,7 +11,7 @@ using UnityEngine;
  */
 public class DirectionalZone : MonoBehaviour
 {
-    public static Vector3 IntendedDirection;
+    public static Vector3 IntendedDirection = Vector3.forward;
 
     void OnTriggerEnter(Collider collider)
     {

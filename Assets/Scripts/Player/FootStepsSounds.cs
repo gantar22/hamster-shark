@@ -17,9 +17,16 @@ public class FootStepsSounds : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
 
+    private float maxVolume;
+
+    private float targetVolume = 0;
+
     private void Awake()
     {
+        maxVolume = audioSource.volume;
+        audioSource.volume = 0;
         StartCoroutine(UpdateRoutine());
+        StartCoroutine(SetVolume());
     }
 
     private IEnumerator UpdateRoutine()
@@ -30,20 +37,23 @@ public class FootStepsSounds : MonoBehaviour
             yield return new WaitForSeconds(.2f);
             if(Vector3.Distance(prevPos,transform.position) < minDistance)
             {
-                if(audioSource.isPlaying)
-                {
-                    audioSource.Stop();
-                }
+                targetVolume = 0;
             }
             else 
             {
-                if(!audioSource.isPlaying)
-                {
-                    audioSource.Play();
-                }
+                targetVolume = maxVolume;
             }
-                    
             prevPos = transform.position;
+        }
+    }
+
+    private IEnumerator SetVolume()
+    {
+        audioSource.Play();
+        while(true)
+        {
+            yield return null;
+            audioSource.volume = Mathf.Lerp(audioSource.volume,targetVolume,Time.deltaTime * 10);
         }
     }
 }
