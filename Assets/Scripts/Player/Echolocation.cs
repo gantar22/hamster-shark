@@ -36,10 +36,10 @@ namespace Player
             while(true)
             {
                 yield return null;
-                if(Input.GetKey(KeyCode.Mouse1))
+                if(Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     yield return Echo();
-                    yield return new WaitForSeconds(.8f);
+                    yield return new WaitForSeconds(.6f);
                 }
             }
         }

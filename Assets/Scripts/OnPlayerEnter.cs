@@ -18,7 +18,6 @@ public class OnPlayerEnter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        print("Hi");
         if(other.tag == "Player")
         {
             onPlayerEnter.Invoke();
