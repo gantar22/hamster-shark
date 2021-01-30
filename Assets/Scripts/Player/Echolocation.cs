@@ -18,6 +18,12 @@ namespace Player
         [SerializeField]
         AudioSource echoPrefab;
 
+        [SerializeField]
+        float gapFactor = .1f;
+
+        [SerializeField]
+        float minimalGap = .2f;
+
 
         private void Awake()
         {
@@ -44,7 +50,7 @@ namespace Player
             
             if(Physics.Raycast(transform.position,transform.forward,out var hit,10,255,QueryTriggerInteraction.Ignore))
             {
-                yield return new WaitForSeconds(hit.distance * .1f);
+                yield return new WaitForSeconds(hit.distance * gapFactor + minimalGap);
                 GameObject.Instantiate(echoPrefab,hit.point,Quaternion.Euler(hit.normal)); //Pool me!
             }
         }
