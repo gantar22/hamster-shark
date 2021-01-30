@@ -187,7 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   echoPrefab: {fileID: 5128242207870863653, guid: ef83fe27021c25346ab02c699d0124d6, type: 3}
   gapFactor: 0.1
-  minimalGap: 0.2
+  minimalGap: 0.12
 --- !u!1 &2052671703424914190
 GameObject:
   m_ObjectHideFlags: 0
