@@ -13,6 +13,10 @@ public class WallProxySounds : MonoBehaviour
 {
     [SerializeField]
     GameObject player;
+    [SerializeField]
+    BoxCollider collider;
+    [SerializeField]
+    AudioSource audio;
 
     private void Awake()
     {
@@ -24,7 +28,7 @@ public class WallProxySounds : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(.1f);
-            
+            audio.transform.position = collider.ClosestPoint(player.transform.position);
         }
     }
 }
