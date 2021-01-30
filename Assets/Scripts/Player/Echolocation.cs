@@ -24,6 +24,7 @@ namespace Player
             StartCoroutine(UpdateRoutine());
         }
 
+
         private IEnumerator UpdateRoutine()
         {
             while(true)
@@ -31,15 +32,19 @@ namespace Player
                 yield return null;
                 if(Input.GetKey(KeyCode.Mouse1))
                 {
-                    Echo();
+                    yield return Echo();
+                    yield return new WaitForSeconds(.8f);
                 }
             }
         }
 
-        public void Echo()
+        public IEnumerator Echo()
         {
+            GameObject.Instantiate(echoPrefab,transform.position,transform.rotation);            
+            
             if(Physics.Raycast(transform.position,transform.forward,out var hit,10,255,QueryTriggerInteraction.Ignore))
             {
+                yield return new WaitForSeconds(hit.distance * .1f);
                 GameObject.Instantiate(echoPrefab,hit.point,Quaternion.Euler(hit.normal)); //Pool me!
             }
         }
