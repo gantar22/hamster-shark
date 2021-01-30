@@ -1,6 +1,8 @@
 using System.Collections;
 using System;
 using UnityEngine;
+using System.Linq;
+using System.Collections.Generic;
 
 /*
  * Author: nathancarterwilliams@gmail.com
@@ -13,6 +15,8 @@ namespace Player
 {
     public class Echolocation : MonoBehaviour
     {
+        [SerializeField]
+        AudioSource echoPrefab;
 
 
         private void Awake()
@@ -34,9 +38,9 @@ namespace Player
 
         public void Echo()
         {
-            if(Physics.Raycast(transform.position,transform.forward,10,255,QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(transform.position,transform.forward,out var hit,10,255,QueryTriggerInteraction.Ignore))
             {
-
+                GameObject.Instantiate(echoPrefab,hit.point,Quaternion.Euler(hit.normal)); //Pool me!
             }
         }
     }
