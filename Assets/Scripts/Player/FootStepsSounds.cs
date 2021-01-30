@@ -27,8 +27,8 @@ public class FootStepsSounds : MonoBehaviour
         var prevPos = transform.position;
         while(true)
         {
-            yield return null;
-            if(Vector3.Distance(prevPos,transform.position) < minDistance * Time.deltaTime)
+            yield return new WaitForSeconds(.2f);
+            if(Vector3.Distance(prevPos,transform.position) < minDistance)
             {
                 if(audioSource.isPlaying)
                 {
