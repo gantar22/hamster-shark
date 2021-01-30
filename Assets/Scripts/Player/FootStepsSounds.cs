@@ -27,14 +27,21 @@ public class FootStepsSounds : MonoBehaviour
         var prevPos = transform.position;
         while(true)
         {
-            yield return new WaitForSeconds(.1f);
-            if(Vector3.Distance(prevPos,transform.position) < minDistance)
+            yield return null;
+            if(Vector3.Distance(prevPos,transform.position) < minDistance * Time.deltaTime)
+            {
                 if(audioSource.isPlaying)
+                {
                     audioSource.Stop();
+                }
+            }
             else 
+            {
                 if(!audioSource.isPlaying)
+                {
                     audioSource.Play();
-
+                }
+            }
                     
             prevPos = transform.position;
         }
