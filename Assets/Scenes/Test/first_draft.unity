@@ -383,7 +383,8 @@ GameObject:
   - component: {fileID: 407153045}
   - component: {fileID: 407153048}
   - component: {fileID: 407153047}
-  m_Layer: 0
+  - component: {fileID: 407153049}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +403,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d8aadadaa7778e4091ecbce1e01bc98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 3
 --- !u!4 &407153046
 Transform:
   m_ObjectHideFlags: 0
@@ -448,6 +449,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &407153049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 407153044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713757415599feb4196da17f9e188ff2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioPrefab: {fileID: 5986611607289929007, guid: a6aa43dce9788c043ba19b78b88291ac, type: 3}
 --- !u!1 &615331035
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +945,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1014,7 +1028,7 @@ GameObject:
   - component: {fileID: 1341277723}
   - component: {fileID: 1341277726}
   - component: {fileID: 1341277725}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1216,10 +1230,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.2
   MaxDistance: 12
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
