@@ -16,7 +16,7 @@ public class AdhocReload : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.R))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }
