@@ -35,10 +35,10 @@ namespace Player
                 {
                     transform.position += transform.forward * speed * Time.deltaTime;
                 }
-                if(Input.GetKey(KeyCode.Mouse1))
-                {
-                    transform.position -= transform.forward * speed * Time.deltaTime;
-                }
+                //if(Input.GetKey(KeyCode.Mouse1))
+                //{
+                //    transform.position -= transform.forward * speed * Time.deltaTime;
+                //}
             }
         }
     }

@@ -47,7 +47,7 @@ namespace Player
                 {
                     if(Physics.Raycast(pos,datum.direction,out var hit,10,255,QueryTriggerInteraction.Ignore))
                     {
-                        datum.source.transform.position = hit.point;
+                        datum.source.transform.position = hit.point + datum.direction * .2f;
                         datum.source.transform.forward  = hit.normal;
 
                         if(!datum.source.isPlaying)
