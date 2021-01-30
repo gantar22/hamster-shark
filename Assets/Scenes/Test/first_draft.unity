@@ -790,7 +790,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -246012377860340529, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
   m_audioClip: {fileID: 8300000, guid: fa58b3131f69a0647ae61419801fa928, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1187,7 +1187,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -246012377860340529, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
   m_audioClip: {fileID: 8300000, guid: d71823ad4491c1443a7d00004f6d1dc7, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.645
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1492,7 +1492,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -12970443189849476, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
   m_audioClip: {fileID: 8300000, guid: eee7ed4f9b587144085f324f87c15220, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.404
+  m_Volume: 1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1501,9 +1501,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0.2
-  MaxDistance: 12
+  MaxDistance: 14
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -1511,10 +1511,19 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.014285714
       value: 1
       inSlope: 0
       outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.6299614
+      value: 0.5885321
+      inSlope: -1.0144928
+      outSlope: -1.0144928
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1522,12 +1531,12 @@ AudioSource:
     - serializedVersion: 3
       time: 1
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: -1.0144928
+      outSlope: -1.0144928
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
