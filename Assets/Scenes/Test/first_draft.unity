@@ -890,8 +890,8 @@ MonoBehaviour:
   youPressedSpace: {fileID: 8300000, guid: 94867346b48ff38469f364954d3f21ca, type: 3}
   proceedByPressMouse: {fileID: 8300000, guid: b94c46e8eea6e2642bb8f0c497be5f87, type: 3}
   findTheWall: {fileID: 8300000, guid: 73152f4004efd1c4cad1ccd21707b853, type: 3}
-  reachWallClip: {fileID: 8300000, guid: ba4cf308b7c9c9040acfffb8949f3eef, type: 3}
-  reachWallClip2: {fileID: 8300000, guid: 3fc1424f21eae3741bc56138c278e2c8, type: 3}
+  reachWallClip: {fileID: 8300000, guid: bb16d482edea753499d05edcc09865fd, type: 3}
+  reachWallClip2: {fileID: 8300000, guid: c75316401eb6aaf4ba8b7cd125523983, type: 3}
   reachWallClip3: {fileID: 8300000, guid: e79987b43305c7449bc516f37a2c368b, type: 3}
   youCanTurn: {fileID: 8300000, guid: 43c7dc9c69e56584bbdf352c3db1c4c1, type: 3}
   turnRight: {fileID: 8300000, guid: 7a47546ae6d7625489960cdb5e4c4922, type: 3}
