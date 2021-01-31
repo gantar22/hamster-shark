@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System;
 using UnityEngine;
+using UnityEngine.Audio;
 
 /*
  * Author: nathancarterwilliams@gmail.com
@@ -17,6 +18,10 @@ namespace Player
 
         [SerializeField]
         float speed = 1;
+
+        [SerializeField]
+        AudioMixerGroup mixerGroup;
+
 
         public State state = State.Online;
 
@@ -44,5 +49,23 @@ namespace Player
                 }
             }
         }
+
+        public void Pause(AudioSource audio)
+        {
+            state = State.Offline;
+        }
+
+        private IEnumerator pause(AudioSource audio)
+        {
+            yield return new WaitUntil(() => !audio.isPlaying);
+            state = State.Online;
+        }
+
+        public void TeleportTo(Transform dest)
+        {
+            transform.position = dest.position;
+            transform.forward = dest.forward;
+        }
+
     }
 }

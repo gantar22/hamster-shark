@@ -234,6 +234,20 @@ public class TutorialScript : MonoBehaviour
         hasReachedFourthCheckPoint = true;
     }
 
+    [ContextMenu("AutoComplete")]
+    public void Finish()
+    {
+        StopAllCoroutines();
+
+        prewall1.enabled = false;
+        prewall2.enabled = false;
+        prewall3.enabled = false;
+        prewall4.enabled = false;
+        helpVoice.Paused = false; 
+        echolocation.IsPaused = false;
+        mouseControls.state = Player.MouseControls.State.Online;
+    }
+
     IEnumerator Play(AudioClip clip)
     {
         helpVoice.Paused = true;

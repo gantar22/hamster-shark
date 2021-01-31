@@ -53,6 +53,7 @@ public class DirectionalHelp : MonoBehaviour
         var pos = player.transform.position;
         while(true)
         {
+            yield return new WaitUntil(() => !Paused);
             var stayingStill = true;
             for(int i = 0; i < 15;i++)
             {
@@ -65,6 +66,11 @@ public class DirectionalHelp : MonoBehaviour
                 yield return new WaitForSeconds(60);
             }
         }
+    }
+
+    public void Stop()
+    {
+        Paused = true;
     }
 
     IEnumerator UpdateRoutine()
