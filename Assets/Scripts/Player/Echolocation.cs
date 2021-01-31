@@ -50,7 +50,7 @@ namespace Player
         {
             GameObject.Instantiate(echoPrefab,transform.position,transform.rotation);            
             
-            if(Physics.Raycast(transform.position,transform.forward,out var hit,10,255,QueryTriggerInteraction.Ignore))
+            if(Physics.Raycast(transform.position,transform.forward,out var hit,20,255,QueryTriggerInteraction.Ignore))
             {
                 yield return new WaitForSeconds(hit.distance * gapFactor + minimalGap);
                 GameObject.Instantiate(echoPrefab,hit.point,Quaternion.Euler(hit.normal)); //Pool me!

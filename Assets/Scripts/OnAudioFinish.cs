@@ -28,12 +28,10 @@ public class OnAudioFinish : MonoBehaviour
             if(!hasStarted && source.isPlaying)
             {
                 hasStarted = true;
-            } else {
-                if(!source.isPlaying)
-                {
-                    onFinish.Invoke();
-                    hasFinished = true;
-                }
+            }
+            if(hasStarted && !source.isPlaying) {
+                onFinish.Invoke();
+                hasFinished = true;
             }
         }
 
