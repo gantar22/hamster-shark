@@ -35,7 +35,7 @@ namespace Player
             StopAllCoroutines();
 
             foreach(var datum in data)
-                datum.source.Stop();
+                datum.source?.Stop();
         }
 
         private IEnumerator UpdateRoutine()
