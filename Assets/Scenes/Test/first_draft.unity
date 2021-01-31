@@ -1217,7 +1217,7 @@ MonoBehaviour:
   prewall1: {fileID: 784943359}
   prewall2: {fileID: 474484679}
   prewall3: {fileID: 1706449731}
-  prewall4: {fileID: 0}
+  prewall4: {fileID: 1156251431}
 --- !u!65 &253551269 stripped
 BoxCollider:
   m_CorrespondingSourceObject: {fileID: 635345958844975946, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
