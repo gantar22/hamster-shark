@@ -16229,7 +16229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.size
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[4].m_Mode
@@ -16250,7 +16250,7 @@ PrefabInstance:
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[4].m_Target
       value: 
-      objectReference: {fileID: 407153049}
+      objectReference: {fileID: 407153050}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[5].m_Target
       value: 
@@ -16273,7 +16273,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
-      value: Deactivate
+      value: StopAllCoroutines
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[5].m_MethodName
@@ -16281,7 +16281,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
-      value: Player.WallSounds, Assembly-CSharp
+      value: UnityEngine.MonoBehaviour, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 635345960193317921, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[5].m_TargetAssemblyTypeName

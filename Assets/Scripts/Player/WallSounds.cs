@@ -24,6 +24,8 @@ namespace Player
 
         Data[] data;
 
+        
+
 
         public void Activate()
         {
