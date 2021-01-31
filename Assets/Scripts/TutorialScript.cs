@@ -132,11 +132,13 @@ public class TutorialScript : MonoBehaviour
                 pressedSpace = false;
                 break;
             }
-            if(Input.GetKey(KeyCode.Space))
+            if(source.isPlaying && Input.GetKey(KeyCode.Space))
             {
                 break;
             }
         }
+
+        yield return new WaitUntil(() => !source.isPlaying);
     
         yield return new WaitForSeconds(.25f);
 
