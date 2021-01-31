@@ -22,7 +22,8 @@ namespace Player
         [SerializeField]
         AudioSource audioPrefab;
 
-        private void Awake()
+
+        public void Activate()
         {
             StartCoroutine(UpdateRoutine());
         }

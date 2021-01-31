@@ -57,7 +57,7 @@ public class DirectionalHelp : MonoBehaviour
             }
             if(stayingStill)
             {
-                source.PlayOneShot(youHaventMoved);
+                //source.PlayOneShot(youHaventMoved);
                 yield return new WaitForSeconds(60);
             }
         }
