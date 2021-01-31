@@ -27,7 +27,8 @@ public class TutorialScript : MonoBehaviour
     [SerializeField]
     AudioClip pressAnyKey;
 
-
+    [SerializeField]
+    AudioClip click;
     [SerializeField]
     AudioClip whoAreYou;
 
@@ -76,11 +77,14 @@ public class TutorialScript : MonoBehaviour
     BoxCollider prewall2;
     [SerializeField]
     BoxCollider prewall3;
+    [SerializeField]
+    BoxCollider prewall4;
     
     bool hasReachedFirstCheckPoint = false;
     bool hasReachedSecondCheckPoint = false;
 
     bool hasReachedThirdCheckPoint = false;
+    bool hasReachedFourthCheckPoint = false;
 
     bool hasReachedWall = false;
 
@@ -101,6 +105,10 @@ public class TutorialScript : MonoBehaviour
         source.PlayOneShot(pressAnyKey);
         yield return new WaitUntil(() => Input.anyKey);
         yield return new WaitUntil(() => !source.isPlaying);
+
+        source.PlayOneShot(click);
+
+        yield return new WaitForSeconds(3);
 
         source.PlayOneShot(whoAreYou);
         yield return new WaitUntil(() => !source.isPlaying);
@@ -179,6 +187,10 @@ public class TutorialScript : MonoBehaviour
         helpVoice.DoNothingCallout();
 
         yield return Play(pleaseLeave);
+        prewall3.enabled = false;
+
+        yield return new WaitUntil(() => hasReachedThirdCheckPoint);
+        yield return new WaitForSeconds(1);
 
         echolocation.IsPaused = false;
         yield return Play(firePing);
@@ -190,8 +202,8 @@ public class TutorialScript : MonoBehaviour
         yield return Play(didPing);
 
 
-        prewall3.enabled = false;
-        yield return new WaitUntil(() => hasReachedThirdCheckPoint);
+        prewall4.enabled = false;
+        yield return new WaitUntil(() => hasReachedFourthCheckPoint);
 
         yield return Play(youGotIt);
 
@@ -214,6 +226,10 @@ public class TutorialScript : MonoBehaviour
     public void ReachThirdCheckPoint()
     {
         hasReachedThirdCheckPoint = true;
+    }
+    public void ReachFourthCheckPoint()
+    {
+        hasReachedFourthCheckPoint = true;
     }
 
     IEnumerator Play(AudioClip clip)
