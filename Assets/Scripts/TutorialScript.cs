@@ -25,6 +25,10 @@ public class TutorialScript : MonoBehaviour
     AudioSource source;
 
     [SerializeField]
+    AudioClip pressAnyKey;
+
+
+    [SerializeField]
     AudioClip whoAreYou;
 
     [SerializeField]
@@ -93,6 +97,10 @@ public class TutorialScript : MonoBehaviour
     IEnumerator Tutorial()
     {
         yield return new WaitForSeconds(2);
+
+        source.PlayOneShot(pressAnyKey);
+        yield return new WaitUntil(() => Input.anyKey);
+        yield return new WaitUntil(() => !source.isPlaying);
 
         source.PlayOneShot(whoAreYou);
         yield return new WaitUntil(() => !source.isPlaying);

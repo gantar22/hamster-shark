@@ -9,6 +9,6 @@ using UnityEngine;
  * 
  *
  */
-    public class ClickToBegin : MonoBehaviour
-    {
-    }
+public class ClickToBegin : MonoBehaviour
+{
+}
