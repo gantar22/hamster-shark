@@ -24,6 +24,8 @@ namespace Player
         [SerializeField]
         float minimalGap = .2f;
 
+        public bool IsPaused = false;
+
 
         private void Awake()
         {
@@ -35,7 +37,7 @@ namespace Player
         {
             while(true)
             {
-                yield return null;
+                yield return new WaitUntil(() => !IsPaused);
                 if(Input.GetKeyDown(KeyCode.Mouse1))
                 {
                     yield return Echo();

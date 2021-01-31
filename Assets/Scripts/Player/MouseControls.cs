@@ -13,9 +13,12 @@ namespace Player
 {
     public class MouseControls : MonoBehaviour
     {
+        public enum State {Offline, OnlyMovement, Online }
+
         [SerializeField]
         float speed = 1;
 
+        public State state = State.Online;
 
         private void Awake()
         {
@@ -29,16 +32,16 @@ namespace Player
             while(true)
             {
                 yield return null;
-                transform.rotation *= Quaternion.Euler(0,Input.GetAxis("Mouse X"),0);
+                if(state == State.Online)
+                    transform.rotation *= Quaternion.Euler(0,Input.GetAxis("Mouse X"),0);
 
-                if(Input.GetKey(KeyCode.Mouse0))
+                if(state == State.Online || state == State.OnlyMovement)
                 {
-                    transform.position += transform.forward * speed * Time.deltaTime;
+                    if(Input.GetKey(KeyCode.Mouse0))
+                    {
+                        transform.position += transform.forward * speed * Time.deltaTime;
+                    }
                 }
-                //if(Input.GetKey(KeyCode.Mouse1))
-                //{
-                //    transform.position -= transform.forward * speed * Time.deltaTime;
-                //}
             }
         }
     }

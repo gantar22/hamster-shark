@@ -32,16 +32,42 @@ public class DirectionalHelp : MonoBehaviour
     [SerializeField]
     AudioClip[] overHere;
 
+    [SerializeField]
+    AudioClip youHaventMoved;
+
+    public bool Paused = false;
+    public bool IsPlaying() => source.isPlaying;
+
     void Awake()
     {
         StartCoroutine(UpdateRoutine());
+        StartCoroutine(DoingNothingCallout());
+    }
+
+    IEnumerator DoingNothingCallout()
+    {
+        var pos = player.transform.position;
+        while(true)
+        {
+            var stayingStill = true;
+            for(int i = 0; i < 15;i++)
+            {
+                stayingStill &= player.transform.position == pos;
+                yield return new WaitForSeconds(1);
+            }
+            if(stayingStill)
+            {
+                source.PlayOneShot(youHaventMoved);
+                yield return new WaitForSeconds(60);
+            }
+        }
     }
 
     IEnumerator UpdateRoutine()
     {
         while(true)
         {
-            yield return null;
+            yield return new WaitUntil(() => !Paused);
             if(Input.GetKeyDown(KeyCode.Space))
             {
                 var angle = Vector3.Angle(player.transform.forward,DirectionalZone.IntendedDirection);
