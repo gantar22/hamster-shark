@@ -22,16 +22,26 @@ namespace Player
         [SerializeField]
         AudioSource audioPrefab;
 
+        Data[] data;
+
 
         public void Activate()
         {
             StartCoroutine(UpdateRoutine());
         }
 
+        public void Deactivate()
+        {
+            StopAllCoroutines();
+
+            foreach(var datum in data)
+                datum.source.Stop();
+        }
+
         private IEnumerator UpdateRoutine()
         {
             var sources = Enumerable.Repeat(0,4).Select(_=>GameObject.Instantiate(audioPrefab)).ToArray();
-            var data = new Data []
+            data = new Data []
             {
                 new Data {direction = Vector3.left,source  = sources[0]},
                 new Data {direction = Vector3.right, source = sources[1]},

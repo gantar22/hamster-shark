@@ -53,10 +53,12 @@ namespace Player
         public void Pause(AudioSource audio)
         {
             state = State.Offline;
+            StartCoroutine(pause(audio));
         }
 
         private IEnumerator pause(AudioSource audio)
         {
+            yield return new WaitForSeconds(1f);
             yield return new WaitUntil(() => !audio.isPlaying);
             state = State.Online;
         }
