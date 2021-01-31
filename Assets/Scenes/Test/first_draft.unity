@@ -18567,6 +18567,26 @@ PrefabInstance:
       propertyPath: speed
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
 --- !u!1001 &2139614467690723798
