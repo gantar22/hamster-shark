@@ -54,6 +54,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  state: 2
 --- !u!135 &7493506222559654855
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -111,6 +112,7 @@ MonoBehaviour:
   echoPrefab: {fileID: 5128242207870863653, guid: ef83fe27021c25346ab02c699d0124d6, type: 3}
   gapFactor: 0.1
   minimalGap: 0.2
+  IsPaused: 0
 --- !u!114 &7493506222559654852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +181,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -945775813767414610, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
-  m_audioClip: {fileID: 8300000, guid: c3c7fcb299239634f90d56682df61555, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d173b17edea24e044b8ce5d3ed7fc474, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.576
   m_Pitch: 1
@@ -470,7 +472,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -945775813767414610, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 97c22fc470cab3e43af096224e540740, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 5ce70999ed2adaf48adb2739972ddde1, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.509
   m_Pitch: 1
