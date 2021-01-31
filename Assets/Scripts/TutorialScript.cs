@@ -168,6 +168,8 @@ public class TutorialScript : MonoBehaviour
         prewall2.enabled = false;
         yield return new WaitUntil(() => hasReachedSecondCheckPoint);
 
+        helpVoice.DoNothingCallout();
+
         yield return Play(pleaseLeave);
 
         echolocation.IsPaused = false;

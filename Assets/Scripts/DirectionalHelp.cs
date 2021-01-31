@@ -41,6 +41,10 @@ public class DirectionalHelp : MonoBehaviour
     void Awake()
     {
         StartCoroutine(UpdateRoutine());
+    }
+
+    public void DoNothingCallout()
+    {
         StartCoroutine(DoingNothingCallout());
     }
 
@@ -57,7 +61,7 @@ public class DirectionalHelp : MonoBehaviour
             }
             if(stayingStill)
             {
-                //source.PlayOneShot(youHaventMoved);
+                source.PlayOneShot(youHaventMoved);
                 yield return new WaitForSeconds(60);
             }
         }
