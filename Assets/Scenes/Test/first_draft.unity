@@ -1058,6 +1058,10 @@ PrefabInstance:
       propertyPath: onPlayerEnter.m_PersistentCalls.m_Calls.Array.data[4].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 5267956822901270522, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 5a0f1b3233b3dd842a15631e1aa5d826, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
 --- !u!1 &202997690
@@ -2453,6 +2457,10 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -12970443189849476, guid: e25ae476d68077b4daf247f562c44aae, type: 2}
+    - target: {fileID: 5267956822901270522, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4c49ea9bd663e4fbab1e7ac661d0f2, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6308cbdf5b7ba9041a6331e3c68332c2, type: 3}
 --- !u!1 &378731125 stripped
