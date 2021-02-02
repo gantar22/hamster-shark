@@ -3362,6 +3362,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 621566522}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!4 &439213356
 Transform:
   m_ObjectHideFlags: 0
@@ -18217,7 +18229,6 @@ MonoBehaviour:
   player: {fileID: 407153044}
   source: {fileID: 1024660651}
   keepGoing:
-  - {fileID: 8300000, guid: 94867346b48ff38469f364954d3f21ca, type: 3}
   - {fileID: 8300000, guid: 9f7a5da6cca78814a9301670a15574e0, type: 3}
   turnAround:
   - {fileID: 8300000, guid: abbb36e31b6543a4d9a419edb288d485, type: 3}
@@ -18566,6 +18577,26 @@ PrefabInstance:
     - target: {fileID: 680854317750433351, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
       propertyPath: speed
       value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 680854318271935137, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a298b008bd94894eb752efb5e672f59, type: 3}

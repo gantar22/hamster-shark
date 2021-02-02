@@ -143,7 +143,7 @@ public class TutorialScript : MonoBehaviour
         yield return new WaitForSeconds(.25f);
 
         if(pressedSpace)
-            source.PlayOneShot(youPressedSpace);
+            source.PlayOneShot(youPressedSpace, 0.75f);
         
         yield return new WaitUntil(() => !source.isPlaying);
 
