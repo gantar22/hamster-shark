@@ -25,9 +25,13 @@ public class DirectionalHelp : MonoBehaviour
 
     [SerializeField]
     AudioClip[] turnRight;
+    [SerializeField]
+    AudioClip[] slightRight;
 
     [SerializeField]
     AudioClip[] turnLeft;
+    [SerializeField]
+    AudioClip[] slightLeft;
 
     [SerializeField]
     AudioClip[] overHere;
@@ -37,6 +41,11 @@ public class DirectionalHelp : MonoBehaviour
 
     public bool Paused = false;
     public bool IsPlaying() => source.isPlaying;
+
+    public void StopNow() 
+    {
+        source.Stop();
+    }
 
     void Awake()
     {
@@ -83,12 +92,12 @@ public class DirectionalHelp : MonoBehaviour
                 var angle = Vector3.Angle(player.transform.forward,DirectionalZone.IntendedDirection);
                 print($"player {player.transform.forward}, intended {DirectionalZone.IntendedDirection}, angle {angle}");
 
-                if( angle < 45)
+                if( angle < 45f/2f)
                 {
                     var clip = keepGoing[(int)(UnityEngine.Random.value * keepGoing.Length)];
                     source.PlayOneShot(clip);
                 }
-                else if(angle > 135)
+                else if(angle > 135f)
                 {
                     var clip = turnAround[(int)(UnityEngine.Random.value * turnAround.Length)];
                     source.PlayOneShot(clip);
@@ -96,14 +105,28 @@ public class DirectionalHelp : MonoBehaviour
                 {
                     var rightness = Vector3.Angle(-player.transform.right,DirectionalZone.IntendedDirection);
                     var leftness  = Vector3.Angle( player.transform.right,DirectionalZone.IntendedDirection);
+                    
                     if(leftness <= rightness)
                     {
-                        var clip = turnRight[(int)(UnityEngine.Random.value * turnRight.Length)];
-                        source.PlayOneShot(clip);
+                        if(angle < 45)
+                        {
+                            var clip = slightRight[(int)(UnityEngine.Random.value * slightRight.Length)];
+                            source.PlayOneShot(clip);
+                        } else {
+                            var clip = turnRight[(int)(UnityEngine.Random.value * turnRight.Length)];
+                            source.PlayOneShot(clip);
+                        }
+
                     } else 
                     {
-                        var clip = turnLeft[(int)(UnityEngine.Random.value * turnLeft.Length)];
-                        source.PlayOneShot(clip);
+                        if(angle < 45)
+                        {
+                            var clip = slightLeft[(int)(UnityEngine.Random.value * slightLeft.Length)];
+                            source.PlayOneShot(clip);
+                        } else {
+                            var clip = turnLeft[(int)(UnityEngine.Random.value * turnLeft.Length)];
+                            source.PlayOneShot(clip);
+                        }
                     }
                 }
                 yield return new WaitForSeconds(3);

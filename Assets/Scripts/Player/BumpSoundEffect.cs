@@ -43,7 +43,7 @@ public class BumpSoundEffect : MonoBehaviour
 
             if(Input.GetKey(KeyCode.Mouse0))   
             {        
-                if(Physics.Raycast(transform.position,transform.forward,.5f,255,QueryTriggerInteraction.Ignore))
+                if(Physics.Raycast(transform.position,transform.forward,.6f,255,QueryTriggerInteraction.Ignore))
                 {
                     sound.Play();
                 }

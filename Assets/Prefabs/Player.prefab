@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7e02ea7bc737c942bb96688ef2aaa9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minDistance: 0.2
+  minDistance: 0.1
   audioSource: {fileID: 680854318109662615}
 --- !u!114 &680854317750433358
 MonoBehaviour:

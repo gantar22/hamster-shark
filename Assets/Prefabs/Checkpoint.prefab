@@ -479,6 +479,7 @@ GameObject:
   - component: {fileID: 4784250149829211295}
   - component: {fileID: 5408130812604246414}
   - component: {fileID: 6530537310640423315}
+  - component: {fileID: 5526054549142569209}
   m_Layer: 0
   m_Name: AudioSuccess
   m_TagString: Untagged
@@ -625,3 +626,18 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   source: {fileID: 5408130812604246414}
+--- !u!114 &5526054549142569209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8885370811374422543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ea5207de68432438c39513f9f853d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  help: {fileID: 0}
+  triggerSource: {fileID: 5408130812604246414}
+  waitSource: {fileID: 5267956822901270522}

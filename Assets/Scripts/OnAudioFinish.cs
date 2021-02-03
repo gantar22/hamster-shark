@@ -34,8 +34,6 @@ public class OnAudioFinish : MonoBehaviour
                 hasFinished = true;
             }
         }
-
-
     }
 
 

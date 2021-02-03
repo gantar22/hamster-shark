@@ -99,7 +99,7 @@ public class TutorialScript : MonoBehaviour
     }
 
     IEnumerator Tutorial()
-    {
+    { //TODO add repeats for clarity
         yield return new WaitForSeconds(2);
 
         source.PlayOneShot(pressAnyKey);
@@ -153,11 +153,28 @@ public class TutorialScript : MonoBehaviour
         yield return Play(proceedByPressMouse);
 
         mouseControls.state = Player.MouseControls.State.OnlyMovement;
-        yield return new WaitUntil(() => Input.GetKey(KeyCode.Mouse0));
-        source.PlayOneShot(findTheWall);
-        
+
+        time = Time.time;
+        while(! Input.GetKey(KeyCode.Mouse0))
+        {
+            yield return null;
+            if(Time.time - time > 5)
+            {        
+                helpVoice.Paused = true;
+                yield return new WaitUntil(() => !helpVoice.IsPlaying() ||  Input.GetKey(KeyCode.Mouse0));
+                source.PlayOneShot(proceedByPressMouse);
+                yield return new WaitUntil(() => !source.isPlaying ||  Input.GetKey(KeyCode.Mouse0));
+                helpVoice.Paused = false; 
+                time = Time.time;
+            }
+        }
+
+        yield return new WaitUntil(() => !source.isPlaying);        
         
         wallSounds.Activate();
+
+        yield return Play(findTheWall);
+
         yield return new WaitUntil(() => hasReachedWall);
         yield return new WaitForSeconds(1);
 
@@ -197,7 +214,20 @@ public class TutorialScript : MonoBehaviour
         echolocation.IsPaused = false;
         yield return Play(firePing);
 
-        yield return new WaitUntil(() => Input.GetKey(KeyCode.Mouse1));
+        time = Time.time;
+        while(Input.GetKey(KeyCode.Mouse1))
+        {
+            yield return null;
+            if(Time.time - time > 5)
+            {
+                helpVoice.Paused = true;
+                yield return new WaitUntil(() => !helpVoice.IsPlaying() ||  Input.GetKey(KeyCode.Mouse0));
+                source.PlayOneShot(firePing);
+                yield return new WaitUntil(() => !source.isPlaying ||  Input.GetKey(KeyCode.Mouse0));
+                helpVoice.Paused = false; 
+                time = Time.time;
+            }
+        }
 
         yield return new WaitForSeconds(1);
 
