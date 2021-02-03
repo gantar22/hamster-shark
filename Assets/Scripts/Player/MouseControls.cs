@@ -52,7 +52,6 @@ namespace Player
 
         public void Pause(AudioSource audio)
         {
-            print("prepause");
             state = State.Offline;
             StartCoroutine(pause(audio));
         }
@@ -71,6 +70,11 @@ namespace Player
         {
             transform.position = dest.position;
             transform.forward = dest.forward;
+        }
+
+        public void Disable()
+        {
+            state = State.OnlyMovement;
         }
 
     }
